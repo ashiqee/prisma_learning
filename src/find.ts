@@ -6,10 +6,13 @@ const prisma = new PrismaClient();
 const main = async()=>{
 
 // get all data 
+// const getWithSelectAllFromDB= await prisma.post.findMany({
+//     select:{
+//         authorName:false
+//     }
+// });
 const getAllFromDB= await prisma.post.findMany({
-    select:{
-        authorName:true
-    }
+  
 });
 
 //find first and find first aor throw error
@@ -20,16 +23,16 @@ const findFirst = await prisma.post.findFirstOrThrow({
 })
 
 // find unique and find unique or throw error
-const findUnique = await prisma.post.findUniqueOrThrow({
-    where:{
-        id:12
-    },
-    select:{
-        title:true,
-        content:true,
-        authorName:true,
-    }
-})
+// const findUnique = await prisma.post.findUniqueOrThrow({
+//     where:{
+//         id:2
+//     },
+//     select:{
+//         title:true,
+//         content:true,
+//         authorName:true,
+//     }
+// })
 
 
 console.log({getAllFromDB});
