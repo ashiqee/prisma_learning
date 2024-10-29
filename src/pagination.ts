@@ -18,7 +18,7 @@ const  paginationSorting = async()=>{
         skip:2,
         take:2,
         cursor:{
-            id:4
+            id:1
         }
     })
 
